@@ -18,6 +18,8 @@ You can get started by clicking on `Use this template` for creating new repo usi
 
 Install dev dependencies
 
+## Node v18.14.0
+
 ```sh
 yarn install // or npm install
 ```
@@ -62,3 +64,4 @@ const plugins = {
   forms: true,
   containerQueries: true,
 };
+```
