@@ -1,0 +1,106 @@
+@import "./tailwind";
+@import "./main";
+@import "./fonts.scss";
+
+.container {
+  @apply mx-auto max-w-container;
+}
+.container2 {
+  @apply mx-auto max-w-container2;
+}
+.button {
+  @apply flex  items-center justify-center text-text font-medium transition;
+  &--black {
+    @apply border border-black bg-black text-white hover:bg-white hover:text-black;
+  }
+  &--outline {
+    @apply border border-black bg-white text-black hover:bg-black hover:text-white;
+  }
+}
+.owl-carousel .owl-nav {
+  .owl-next,
+  .owl-prev {
+    position: static;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+    span {
+      display: none;
+    }
+    &.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+  button.owl-next:is(button) {
+    background-image: url(../img/arrow-right.svg);
+  }
+  button.owl-prev:is(button) {
+    background-image: url(../img/arrow-left.svg);
+  }
+}
+.owl-stage {
+  display: flex;
+}
+.owl-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.intro {
+  .owl-dots {
+    position: absolute;
+    top: -14px;
+    right: 173px;
+    counter-reset: slides-num;
+  }
+  .owl-carousel .owl-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    max-width: 95px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .owl-dot {
+    position: relative;
+    counter-increment: slides-num;
+    font-size: 15px;
+    line-height: 20px;
+    span {
+      display: none;
+    }
+
+    &.active {
+      &:before {
+        position: absolute;
+        content: counter(slides-num);
+      }
+    }
+    &:last-child {
+      &::after {
+        position: absolute;
+        right: -41px;
+        content: "из " counter(slides-num);
+      }
+    }
+  }
+}
+.news {
+  .owl-carousel:is(div) {
+    position: static;
+  }
+  .owl-carousel .owl-nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    max-width: 95px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
